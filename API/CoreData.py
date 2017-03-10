@@ -9,3 +9,6 @@ sampleData = {
 
 treatyText = "قراردادها " + u'\U0001F4D1'
 packageText = "پکیج ها " + u'\U0001F381'
+
+sessions = {}
+mainSessions = {}

@@ -1,5 +1,5 @@
 import requests
-import API.Creator
+import API.Creator, API.CoreData
 
 class RequestHandler():
     def __init__(self):
@@ -31,3 +31,19 @@ class RequestHandler():
         treaties = self.getTreaties(token)
         finalTreaties = self.messageCreator.createTreatyMessage(treaties)
         return finalTreaties
+
+    def signIn(self, username, password):
+        log = requests.post('http://84.241.44.153:8585/api/v1/oauth/token', data= {
+            'grant_type': 'password',
+            'client_id': '1',
+            'client_secret': 'Dr56kmtJWx2WzEgFbiHYJCZThno00dwqvkZrN7uV',
+            'username': username,
+            'password': password,
+            'scope': ''
+        })
+        #print(username, password)
+        if('error' in log.json()):
+            return False
+        else:
+            return log.json()['access_token']
+

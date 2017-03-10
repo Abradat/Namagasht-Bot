@@ -42,6 +42,18 @@ class MessageCreator():
         messages.append(messageText)
         return messages
 
+    def signIn(self, state):
+        messageText = ""
+        if(state == 0):
+            messageText = u'\U0001F337' "با سلام به بات نماگشت خوش آمدید" + u'\U0001F337' + '\n\n\n\n' + \
+                          "لطفا نام کاربری خود را وارد نمایید :" + '\n\n' + "Username-Password" + \
+                          '\n\n\n' + (u'\U0001F33F') * 3
+        elif(state == 1):
+            messageText = u'\U0001F512' + " لطفا کلمه ی عبور خود را وارد نمایید :‌"
+
+        return messageText
+
+
 
 
 
