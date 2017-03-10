@@ -43,7 +43,6 @@ def start(message):
 
 @bot.message_handler(commands=['logout'])
 def logout(message):
-    print("hello")
     myDataHandler.removeFromUsers(message.from_user.id)
     start(message)
 
