@@ -9,6 +9,13 @@ sampleData = {
 
 treatyText = "قراردادها " + u'\U0001F4D1'
 packageText = "پکیج ها " + u'\U0001F381'
+pickupText = "پیکاپ ها " + u'\U0001F310'
+
+hotelText = "هتل " + u'\U0001F3E8'
+ticketText = "بلیط " + u'\U0001F39F'
+receiptText = "رسید " + u'\U0001F4CB'
+returnText = "بازگشت " + u'\U0001F519'
 
 sessions = {}
 mainSessions = {}
+treatySesions = {}

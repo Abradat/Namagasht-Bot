@@ -32,6 +32,39 @@ class RequestHandler():
         finalTreaties = self.messageCreator.createTreatyMessage(treaties)
         return finalTreaties
 
+    def getPickups(self, token):
+        pickups = requests.get('http://84.241.44.153:8585/api/v1/pickups', headers = {
+            'Authorization': 'Bearer ' + token,
+            'Accept': 'application/json'
+        })
+        return pickups.json()
+
+    def getFinalPickups(self, token):
+        pickups = self.getPickups(token)
+        finalPickups = self.messageCreator.
+
+    def getHotel(self, token, message):
+        pdfText = requests.get('http://84.241.44.153:8585/api/v1/treaties/' + str(message) + '/hotel', headers = {
+            'Authorization': 'Bearer ' + token,
+            'Accept': 'application/json'
+        })
+        return pdfText.json()['content']
+
+    def getTicket(self, token, message):
+        pdfText = requests.get('http://84.241.44.153:8585/api/v1/treaties/' + str(message) + '/ticket', headers ={
+            'Authorization': 'Bearer ' + token,
+            'Accept': 'application/json'
+        })
+        return pdfText.json()['content']
+
+    def getReceipt(self, token, message):
+        pdfText = requests.get('http://84.241.44.153:8585/api/v1/treaties/' + str(message) + '/receipt', headers ={
+            'Authorization': 'Bearer ' + token,
+            'Accept': 'application/json'
+        })
+        return pdfText.json()['content']
+
+
     def signIn(self, username, password):
         log = requests.post('http://84.241.44.153:8585/api/v1/oauth/token', data= {
             'grant_type': 'password',

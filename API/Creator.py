@@ -32,15 +32,23 @@ class MessageCreator():
             messageText += u'\U0001F4CE' + " نام حسابدار : " + message["counter"] + "\n\n\n"
             messageText += (u'\U0001F33F') * 3
             messages.append(messageText)
-        messageText = ""
-        contact = message["contact_values"].split(',')
-        messageText += u'\U0001F4DE' + "شماره تماس ثابت : " + contact[0] + '\n\n'
-        messageText += u'\U0001F4F1' + " شماره تماس همراه : " + contact[1] + '\n\n'
-        messageText += u'\U0001F4E7' + " آدرس ایمیل :‌ " + contact[2] + '\n\n'
-        messageText += u'\U0001F4EE' +  " نشانی :‌ " + contact[3] + '\n\n'
-        messageText += (u'\U0001F33F') * 3
-        messages.append(messageText)
+
+        #messageText = ""
+        #contact = message["contact_values"].split(',')
+        #messageText += u'\U0001F4DE' + "شماره تماس ثابت : " + contact[0] + '\n\n'
+        #messageText += u'\U0001F4F1' + " شماره تماس همراه : " + contact[1] + '\n\n'
+        #messageText += u'\U0001F4E7' + " آدرس ایمیل :‌ " + contact[2] + '\n\n'
+        #messageText += u'\U0001F4EE' +  " نشانی :‌ " + contact[3] + '\n\n'
+        #messageText += (u'\U0001F33F') * 3
+        #messages.append(messageText)
+
         return messages
+
+    def createPickupMessage(self, pickups):
+        messages = []
+        for message in messages:
+            messageText = ""
+
 
     def signIn(self, state):
         messageText = ""
