@@ -10,6 +10,8 @@ sampleData = {
 treatyText = "قراردادها " + u'\U0001F4D1'
 packageText = "پکیج ها " + u'\U0001F381'
 pickupText = "پیکاپ ها " + u'\U0001F310'
+contactText = "تماس با ما " + u'\U0001F4E9'
+logoutText = "خروج " + u'\U0001F51A'
 
 hotelText = "هتل " + u'\U0001F3E8'
 ticketText = "بلیط " + u'\U0001F39F'

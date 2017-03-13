@@ -2,6 +2,7 @@ import requests
 import API.Creator, API.CoreData
 
 class RequestHandler():
+
     def __init__(self):
         self.messageCreator = API.Creator.MessageCreator()
 
@@ -41,7 +42,8 @@ class RequestHandler():
 
     def getFinalPickups(self, token):
         pickups = self.getPickups(token)
-        finalPickups = self.messageCreator.
+        finalPickups = self.messageCreator.createPickupMessage(pickups)
+        return finalPickups
 
     def getHotel(self, token, message):
         pdfText = requests.get('http://84.241.44.153:8585/api/v1/treaties/' + str(message) + '/hotel', headers = {
@@ -64,7 +66,6 @@ class RequestHandler():
         })
         return pdfText.json()['content']
 
-
     def signIn(self, username, password):
         log = requests.post('http://84.241.44.153:8585/api/v1/oauth/token', data= {
             'grant_type': 'password',
@@ -80,3 +81,8 @@ class RequestHandler():
         else:
             return log.json()['access_token']
 
+    def aboutUs(self, token):
+        treaties = self.getTreaties(token)
+        aboutUs = treaties[len(treaties) - 1]
+        finalAbouUs = self.messageCreator.aboutUsMessage(aboutUs)
+        return finalAbouUs
