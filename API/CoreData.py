@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 sampleData = {
     'grant_type': 'password',
     'client_id': '1',
