@@ -3,7 +3,6 @@ import requests, telebot
 import API.request
 import API.CoreData
 import API.CoreDataHandler
-import API.CoreDataHandler2
 from telebot import types
 
 myReqHandler = API.request.RequestHandler()
